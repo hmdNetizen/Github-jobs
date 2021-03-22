@@ -4,7 +4,10 @@ import Input from "./Input";
 const SearchField = () => {
   return (
     <form className="form">
-      <Input />
+      <Input
+        className="form__input"
+        placeholder="Title, companies, expertise, benefits"
+      />
       <button type="submit" className="form__submit">
         Search
       </button>

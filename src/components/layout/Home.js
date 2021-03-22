@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import React from "react";
-import SearchField from "./formElements/SearchField";
+import SearchField from "../formElements/SearchField";
 
 const Home = () => {
   return (

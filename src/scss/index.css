@@ -54,6 +54,10 @@ body {
   color: #aeafb6;
 }
 
+.form__input--location {
+  width: 25em;
+}
+
 .form__submit {
   background: #1e87ff;
   position: absolute;
@@ -83,6 +87,89 @@ body {
   font-size: 2rem;
 }
 
+.form__inputIcon--location {
+  left: 4em;
+  -webkit-transform: translateY(2.35em);
+          transform: translateY(2.35em);
+}
+
+.form__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3em;
+}
+
+.form__wrapper--location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.form__wrapper__radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form__checkbox {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 1em;
+}
+
+.form__label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.form__label--location {
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  color: #aeafb6;
+  font-weight: 500;
+}
+
+.form__label--city {
+  font-weight: 500;
+}
+
+.form__radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__radio:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.form__radio__btn {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1em;
+}
+
 .header {
   margin-bottom: 3em;
 }
@@ -93,5 +180,18 @@ body {
 
 .header__thin {
   font-weight: 300;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main__content {
+  justify-self: flex-start;
 }
 /*# sourceMappingURL=index.css.map */
