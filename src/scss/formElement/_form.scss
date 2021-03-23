@@ -16,10 +16,14 @@
     &::placeholder {
       color: $color-grey;
     }
-  }
 
-  &__input--location {
-    width: 25em;
+    &--location {
+      width: 22em;
+      margin-right: 3em;
+      -webkit-box-shadow: 0px 3px 6px 0px rgba(174, 175, 182, 1);
+      -moz-box-shadow: 0px 3px 6px 0px rgba(174, 175, 182, 1);
+      box-shadow: 0px 3px 6px 0px rgba(174, 175, 182, 1);
+    }
   }
 
   &__submit {
@@ -54,6 +58,10 @@
       left: 4em;
       transform: translateY(2.35em);
     }
+  }
+
+  &__aside {
+    color: $color-primary;
   }
 
   &__wrapper {

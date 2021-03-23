@@ -23,13 +23,23 @@ const Aside = () => {
         </div>
         <div className="form__wrapper__radio">
           <div className="form__radio">
-            <input type="radio" id="london" className="form__radio__btn" />
+            <input
+              type="radio"
+              id="london"
+              className="form__radio__btn"
+              name="city"
+            />
             <label htmlFor="london" className="form__label form__label--city">
               London
             </label>
           </div>
           <div className="form__radio">
-            <input type="radio" id="amsterdam" className="form__radio__btn" />
+            <input
+              type="radio"
+              id="amsterdam"
+              name="city"
+              className="form__radio__btn"
+            />
             <label
               htmlFor="amsterdam"
               className="form__label form__label--city"
@@ -38,13 +48,27 @@ const Aside = () => {
             </label>
           </div>
           <div className="form__radio">
-            <input type="radio" id="newyork" className="form__radio__btn" />
-            <label htmlFor="newyork" className="form__label form__label--city">
+            <input
+              type="radio"
+              id="newyork"
+              name="city"
+              className="form__radio__btn"
+            />
+            <label
+              htmlFor="newyork"
+              name="newyork"
+              className="form__label form__label--city"
+            >
               New York
             </label>
           </div>
           <div className="form__radio">
-            <input type="radio" id="berlin" className="form__radio__btn" />
+            <input
+              type="radio"
+              id="berlin"
+              name="city"
+              className="form__radio__btn"
+            />
             <label htmlFor="berlin" className="form__label form__label--city">
               Berlin
             </label>

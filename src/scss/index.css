@@ -21,6 +21,80 @@ body {
   padding: 1em 7em;
 }
 
+.card {
+  background: #fff;
+  -webkit-box-shadow: 0px 3px 6px 0px #aeafb6;
+  box-shadow: 0px 3px 6px 0px #aeafb6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5em;
+  border-radius: 0.5em;
+}
+
+.card__image {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0px 3px 6px 0px #aeafb6;
+          box-shadow: 0px 3px 6px 0px #aeafb6;
+  max-width: 10em;
+  max-height: 10em;
+  margin-right: 2em;
+}
+
+.card__description {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #4c5c90;
+}
+
+.card__description > .card__header {
+  font-size: 1.2rem;
+}
+
+.card__description > .card__title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0.25em 0 0.75em;
+  font-family: "Lato", sans-serif;
+}
+
+.card__description > .card__text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.25em 0.5em;
+  border: 1px solid #4c5c90;
+  display: inline-block;
+}
+
+.card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #aeafb6;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.card__info__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__info__wrapper:not(:last-of-type) {
+  margin-right: 3em;
+}
+
 .form__input {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -55,7 +129,10 @@ body {
 }
 
 .form__input--location {
-  width: 25em;
+  width: 22em;
+  margin-right: 3em;
+  -webkit-box-shadow: 0px 3px 6px 0px #aeafb6;
+  box-shadow: 0px 3px 6px 0px #aeafb6;
 }
 
 .form__submit {
@@ -91,6 +168,10 @@ body {
   left: 4em;
   -webkit-transform: translateY(2.35em);
           transform: translateY(2.35em);
+}
+
+.form__aside {
+  color: #4c5c90;
 }
 
 .form__wrapper {
@@ -176,6 +257,7 @@ body {
 
 .header__title {
   font-size: 3rem;
+  color: #423f50;
 }
 
 .header__thin {
@@ -186,12 +268,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .main__content {
-  justify-self: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 /*# sourceMappingURL=index.css.map */

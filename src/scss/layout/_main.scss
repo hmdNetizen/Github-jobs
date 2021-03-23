@@ -1,8 +1,7 @@
 .main {
   display: flex;
-  justify-content: space-between;
 
   &__content {
-    justify-self: flex-start;
+    flex: 1;
   }
 }
