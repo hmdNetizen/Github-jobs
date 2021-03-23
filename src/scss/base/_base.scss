@@ -16,6 +16,29 @@ body {
   color: $color-dark;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .container {
   padding: 1em 7em;
+
+  @include breakpoint(smx) {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  @include breakpoint(xs) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  @include breakpoint(xxs) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 }

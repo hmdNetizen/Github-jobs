@@ -1,6 +1,10 @@
 .main {
   display: flex;
 
+  @include breakpoint(sm) {
+    flex-direction: column;
+  }
+
   &__content {
     flex: 1;
   }

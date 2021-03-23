@@ -7,6 +7,7 @@
   align-items: center;
   padding: 1.5em;
   border-radius: 0.5em;
+  margin-bottom: 3em;
 
   &__image {
     align-self: stretch;
@@ -21,8 +22,23 @@
     flex: 1;
     color: $color-primary;
 
+    @include breakpoint(xs) {
+      display: none;
+    }
+
+    &--phone {
+      display: none;
+      @include breakpoint(xs) {
+        display: block;
+      }
+    }
+
     & > .card__header {
       font-size: 1.2rem;
+
+      @include breakpoint(xxs) {
+        font-weight: 500;
+      }
     }
 
     & > .card__title {
@@ -30,6 +46,15 @@
       font-weight: 500;
       margin: 0.25em 0 0.75em;
       font-family: $font-secondary;
+
+      @include breakpoint(md) {
+        font-size: 1.75rem;
+      }
+
+      @include breakpoint(xxs) {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
     }
 
     & > .card__text {
@@ -46,12 +71,43 @@
     color: $color-grey;
     align-self: flex-end;
 
+    @include breakpoint(xs) {
+      display: none;
+    }
+
+    &--phone {
+      display: none;
+
+      @include breakpoint(xs) {
+        display: flex;
+        margin-top: 2em;
+
+        @include breakpoint(xxs) {
+          flex-direction: column;
+        }
+      }
+    }
+
     &__wrapper {
       display: flex;
       align-items: center;
 
+      & .card__icon {
+        margin-right: 0.25em;
+        font-size: 2rem;
+      }
+
+      & .card__caption {
+        font-size: 1.2rem;
+      }
+
       &:not(:last-of-type) {
         margin-right: 3em;
+
+        @include breakpoint(xxs) {
+          margin-right: 0;
+          margin-bottom: 1em;
+        }
       }
     }
   }

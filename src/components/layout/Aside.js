@@ -1,6 +1,7 @@
 import React from "react";
 import Input from "../formElements/Input";
 
+// All styles for this component can be found in <_form.scss>
 const Aside = () => {
   return (
     <aside className="form__aside">
