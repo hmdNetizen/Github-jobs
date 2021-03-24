@@ -6,13 +6,19 @@ const initialState = {
   job: null,
   errors: null,
 };
-const jobsReducer = (state = [], action) => {
+const jobsReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case actions.API_CALL_BEGAN:
+    case actions.JOBS_REQUESTED:
       return {
         ...state,
         loading: true,
+      };
+    case actions.JOBS_RECEIVED:
+      return {
+        ...state,
+        loading: false,
+        jobs: payload,
       };
     default:
       return state;

@@ -1,15 +1,19 @@
 import React from "react";
 import Card from "../utils/Card";
+import { useSelector } from "react-redux";
+import Spinner from "./../utils/Spinner";
 
 const Contents = () => {
-  const content = ["Google", "Amazon", "Apple", "Microsoft"];
+  const loading = useSelector((state) => state.entities.loading);
+  const jobs = useSelector((state) => state.entities.jobs);
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <ul className="main__content">
-      {content.map((brand) => (
-        <Card details={brand} />
+      {jobs.map((job) => (
+        <Card key={job.id} details={job} />
       ))}
-      <Card />
     </ul>
   );
 };

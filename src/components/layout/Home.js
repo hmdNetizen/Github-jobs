@@ -1,7 +1,14 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import SearchField from "../formElements/SearchField";
+import { jobsReceived } from "../../store/actions/jobs";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(jobsReceived());
+    jobsReceived();
+  }, [dispatch]);
   return (
     <Fragment>
       <header className="header">
