@@ -2,7 +2,10 @@ import React from "react";
 import Input from "../formElements/Input";
 
 // All styles for this component can be found in <_form.scss>
-const Aside = () => {
+const Aside = ({ option, setOption }) => {
+  const handleRadioChange = (e) => {
+    setOption({ [e.target.name]: e.target.value });
+  };
   return (
     <aside className="form__aside">
       <form>
@@ -29,6 +32,8 @@ const Aside = () => {
               id="london"
               className="form__radio__btn"
               name="city"
+              value="London"
+              onChange={handleRadioChange}
             />
             <label htmlFor="london" className="form__label form__label--city">
               London
@@ -40,6 +45,8 @@ const Aside = () => {
               id="amsterdam"
               name="city"
               className="form__radio__btn"
+              value="Amsterdam"
+              onChange={handleRadioChange}
             />
             <label
               htmlFor="amsterdam"
@@ -54,6 +61,9 @@ const Aside = () => {
               id="newyork"
               name="city"
               className="form__radio__btn"
+              value="New York"
+              defaultChecked
+              onChange={handleRadioChange}
             />
             <label
               htmlFor="newyork"
@@ -69,6 +79,8 @@ const Aside = () => {
               id="berlin"
               name="city"
               className="form__radio__btn"
+              value="Berlin"
+              onChange={handleRadioChange}
             />
             <label htmlFor="berlin" className="form__label form__label--city">
               Berlin

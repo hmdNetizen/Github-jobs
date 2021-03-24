@@ -20,6 +20,12 @@ const jobsReducer = (state = initialState, action) => {
         loading: false,
         jobs: payload,
       };
+    case actions.JOBS_CITY_CHANGED:
+      return {
+        ...state,
+        loading: false,
+        jobs: payload,
+      };
     default:
       return state;
   }

@@ -5,7 +5,7 @@ const dummyLogo =
   "https://www.gsr-technology.co.uk/wp-content/uploads/2015/10/partner-logo-placeholder.jpg";
 
 const Card = ({ details }) => {
-  const { company, company_logo, title, location, created_at, type } = details;
+  const { company, company_logo, title, location } = details;
   return (
     <Link to="/">
       <li className="card">
