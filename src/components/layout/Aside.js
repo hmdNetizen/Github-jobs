@@ -2,7 +2,16 @@ import React from "react";
 import Input from "../formElements/Input";
 
 // All styles for this component can be found in <_form.scss>
-const Aside = ({ option, setOption }) => {
+const Aside = (props) => {
+  const {
+    setOption,
+    isFullTime,
+    setIsFullTime,
+    filterJobs,
+    setFilterJobs,
+  } = props;
+  const handleFullTimeCheck = (e) => setIsFullTime((prev) => !prev);
+
   const handleRadioChange = (e) => {
     setOption({ [e.target.name]: e.target.value });
   };
@@ -10,7 +19,13 @@ const Aside = ({ option, setOption }) => {
     <aside className="form__aside">
       <form>
         <div className="form__wrapper">
-          <input type="checkbox" id="fullTime" className="form__checkbox" />
+          <input
+            type="checkbox"
+            id="fullTime"
+            className="form__checkbox"
+            checked={isFullTime}
+            onChange={handleFullTimeCheck}
+          />
           <label htmlFor="fullTime" className="form__label">
             Full Time
           </label>
@@ -20,6 +35,8 @@ const Aside = ({ option, setOption }) => {
           <Input
             className="form__input form__input--location"
             placeholder="City, state, zip code or county"
+            value={filterJobs}
+            onChange={(e) => setFilterJobs(e.target.value)}
           />
           <span className="material-icons form__inputIcon form__inputIcon--location">
             public

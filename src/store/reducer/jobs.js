@@ -15,12 +15,7 @@ const jobsReducer = (state = initialState, action) => {
         loading: true,
       };
     case actions.JOBS_RECEIVED:
-      return {
-        ...state,
-        loading: false,
-        jobs: payload,
-      };
-    case actions.JOBS_CITY_CHANGED:
+    case actions.SEARCHED_JOB_RECEIVED:
       return {
         ...state,
         loading: false,

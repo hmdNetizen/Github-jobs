@@ -22,8 +22,10 @@ export const jobsReceived = (description, full_time, location) => async (
 ) => {
   dispatch(jobsRequested());
 
+  const cancelToken = axios.CancelToken.source();
   try {
     const response = await axios.get(baseURL, {
+      cancelToken: cancelToken.token,
       params: {
         description,
         full_time,
@@ -35,24 +37,62 @@ export const jobsReceived = (description, full_time, location) => async (
       payload: response.data,
     });
   } catch (error) {
+    if (axios.isCancel(error)) return;
     dispatch(jobRequestedFailed(error.message));
   }
+
+  return () => {
+    cancelToken.cancel();
+  };
 };
 
-export const jobsCityRequested = (city) => async (dispatch) => {
-  jobsRequested();
+// export const jobsCityRequested = (city, full_time) => async (dispatch) => {
+//   jobsRequested();
 
+//   const cancelToken = axios.CancelToken.source();
+
+//   try {
+//     const response = await axios.get(baseURL, {
+//       cancelToken: cancelToken.token,
+//       params: {
+//         city,
+//         full_time,
+//       },
+//     });
+//     dispatch({
+//       type: actions.JOBS_CITY_CHANGED,
+//       payload: response.data,
+//     });
+//   } catch (error) {
+//     if (axios.isCancel(error)) return;
+//     dispatch(jobRequestedFailed(error.message));
+//   }
+
+//   return () => {
+//     cancelToken.cancel();
+//   };
+// };
+
+export const searchedJobsReceived = (searched) => async (dispatch) => {
+  jobsRequested();
+  const cancelToken = axios.CancelToken.source();
   try {
     const response = await axios.get(baseURL, {
+      cancelToken: cancelToken.token,
       params: {
-        city,
+        search: searched,
       },
     });
     dispatch({
-      type: actions.JOBS_CITY_CHANGED,
+      type: actions.SEARCHED_JOB_RECEIVED,
       payload: response.data,
     });
   } catch (error) {
+    if (axios.isCancel(error)) return;
     dispatch(jobRequestedFailed(error.message));
   }
+
+  return () => {
+    cancelToken.cancel();
+  };
 };

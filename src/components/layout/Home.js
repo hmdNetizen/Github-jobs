@@ -1,23 +1,24 @@
 import { Fragment, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import SearchField from "../formElements/SearchField";
-import { jobsReceived, jobsCityRequested } from "../../store/actions/jobs";
+import { jobsReceived } from "../../store/actions/jobs";
 import Aside from "./Aside";
 import Contents from "./Contents";
 
 const Home = () => {
+  const [isFullTime, setIsFullTime] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [filterJobs, setFilterJobs] = useState("");
+
   const [option, setOption] = useState({
     city: "New York",
   });
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(jobsReceived("React", true, option.city));
-    jobsReceived();
-    jobsCityRequested(option.city);
-  }, [dispatch, option]);
+    dispatch(jobsReceived("React", true, "New York"));
+  }, [dispatch, option.city, isFullTime]);
 
-  console.log(option.city);
   return (
     <Fragment>
       <header className="header">
@@ -26,10 +27,16 @@ const Home = () => {
         </h1>
       </header>
       <section>
-        <SearchField />
+        <SearchField searchText={searchText} setSearchText={setSearchText} />
       </section>
       <main className="main">
-        <Aside setOption={setOption} option={option} />
+        <Aside
+          setOption={setOption}
+          isFullTime={isFullTime}
+          setIsFullTime={setIsFullTime}
+          filterJobs={filterJobs}
+          setFilterJobs={setFilterJobs}
+        />
         <Contents />
       </main>
     </Fragment>
