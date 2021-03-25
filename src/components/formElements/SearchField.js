@@ -1,8 +1,7 @@
 import Input from "./Input";
 import { useDispatch } from "react-redux";
-import { searchedJobsReceived } from "../../store/actions/jobs";
 
-const SearchField = ({ searchText, setSearchText }) => {
+const SearchField = ({ searchText, setSearchText, jobsReceived }) => {
   const dispatch = useDispatch();
 
   const handleSearchedText = (e) => setSearchText(e.target.value);
@@ -11,10 +10,12 @@ const SearchField = ({ searchText, setSearchText }) => {
     e.preventDefault();
 
     if (searchText !== "") {
-      dispatch(searchedJobsReceived(searchText));
+      dispatch(jobsReceived(searchText));
     } else {
       alert("Please type in something");
     }
+
+    setSearchText("");
   };
 
   return (

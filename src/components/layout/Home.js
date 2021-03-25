@@ -16,7 +16,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(jobsReceived("React", true, "New York"));
+    dispatch(jobsReceived("React", isFullTime, option.city));
   }, [dispatch, option.city, isFullTime]);
 
   return (
@@ -27,7 +27,11 @@ const Home = () => {
         </h1>
       </header>
       <section>
-        <SearchField searchText={searchText} setSearchText={setSearchText} />
+        <SearchField
+          searchText={searchText}
+          setSearchText={setSearchText}
+          jobsReceived={jobsReceived}
+        />
       </section>
       <main className="main">
         <Aside
