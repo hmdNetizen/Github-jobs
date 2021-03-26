@@ -33,6 +33,11 @@ a {
 
 ul {
   list-style-type: none;
+  padding-left: 0 !important;
+}
+
+input {
+  padding: 0 !important;
 }
 
 .container__wrapper {
@@ -245,7 +250,7 @@ ul {
   border: none;
   outline: none;
   position: relative;
-  padding: 0.75em 0.75em 0.75em 2.5em;
+  padding: 0.75em 0.75em 0.75em 2.5em !important;
   border-radius: 0.2em;
 }
 
@@ -374,8 +379,8 @@ ul {
 
 .form__inputIcon--location {
   left: 4em;
-  -webkit-transform: translateY(2.35em);
-          transform: translateY(2.35em);
+  -webkit-transform: translateY(2.5em);
+          transform: translateY(2.5em);
 }
 
 @media (max-width: 760px) {
