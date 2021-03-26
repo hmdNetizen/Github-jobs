@@ -8,7 +8,7 @@ const Contents = () => {
   const jobs = useSelector((state) => state.entities.jobs);
 
   return loading ? (
-    <Spinner />
+    <Spinner color="#4c5c90" />
   ) : (
     <ul className="main__content">
       {jobs.map((job) => (

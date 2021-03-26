@@ -8,7 +8,7 @@ import Contents from "./Contents";
 const Home = () => {
   const [isFullTime, setIsFullTime] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [filterJobs, setFilterJobs] = useState("");
+  const [filterText, setFilterText] = useState("");
 
   const [option, setOption] = useState({
     city: "New York",
@@ -38,8 +38,8 @@ const Home = () => {
           setOption={setOption}
           isFullTime={isFullTime}
           setIsFullTime={setIsFullTime}
-          filterJobs={filterJobs}
-          setFilterJobs={setFilterJobs}
+          filterText={filterText}
+          setFilterText={setFilterText}
         />
         <Contents />
       </main>

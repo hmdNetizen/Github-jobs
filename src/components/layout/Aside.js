@@ -1,16 +1,25 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import Input from "../formElements/Input";
+import { jobsReceived } from "../../store/actions/jobs";
 
 // All styles for this component can be found in <_form.scss>
 const Aside = (props) => {
+  const dispatch = useDispatch();
   const {
     setOption,
     isFullTime,
     setIsFullTime,
-    filterJobs,
-    setFilterJobs,
+    filterText,
+    setFilterText,
   } = props;
   const handleFullTimeCheck = (e) => setIsFullTime((prev) => !prev);
+
+  const handleJobsFilter = (e) => {
+    setFilterText(e.target.value);
+
+    dispatch(jobsReceived(filterText));
+  };
 
   const handleRadioChange = (e) => {
     setOption({ [e.target.name]: e.target.value });
@@ -35,8 +44,8 @@ const Aside = (props) => {
           <Input
             className="form__input form__input--location"
             placeholder="City, state, zip code or county"
-            value={filterJobs}
-            onChange={(e) => setFilterJobs(e.target.value)}
+            value={filterText}
+            onChange={handleJobsFilter}
           />
           <span className="material-icons form__inputIcon form__inputIcon--location">
             public
