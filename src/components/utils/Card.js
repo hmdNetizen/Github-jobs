@@ -8,42 +8,42 @@ const Card = ({ details }) => {
   const { company, company_logo, title, location } = details;
   return (
     <Link to="/">
-      <li className="card">
+      <li className="jobCard">
         <img
-          src={company_logo ? company_logo : dummyLogo}
+          src={company_logo !== null ? company_logo : dummyLogo}
           alt="Company logo"
-          className="card__image"
+          className="jobCard__image"
         />
-        <div className="card__description">
-          <h3 className="card__header">{company}</h3>
-          <h2 className="card__title">{title}</h2>
-          <p className="card__text">Full TIme</p>
+        <div className="jobCard__description">
+          <h3 className="jobCard__header">{company}</h3>
+          <h2 className="jobCard__title">{title}</h2>
+          <p className="jobCard__text">Full TIme</p>
         </div>
-        <div className="card__info">
-          <div className="card__info__wrapper">
-            <span className="material-icons card__icon">public</span>
-            <p className="card__caption">{location}</p>
+        <div className="jobCard__info">
+          <div className="jobCard__info__wrapper">
+            <span className="material-icons jobCard__icon">public</span>
+            <p className="jobCard__caption">{location}</p>
           </div>
-          <div className="card__info__wrapper">
-            <span className="material-icons card__icon">schedule</span>
-            <p className="card__caption">3 days ago</p>
+          <div className="jobCard__info__wrapper">
+            <span className="material-icons jobCard__icon">schedule</span>
+            <p className="jobCard__caption">3 days ago</p>
           </div>
         </div>
         {/* Only displays on breakpoints that is less than 600px */}
-        <div className="card__details">
-          <div className="card__description card__description--phone">
-            <h3 className="card__header">{company}</h3>
-            <h2 className="card__title">{title}</h2>
-            <p className="card__text">Full TIme</p>
+        <div className="jobCard__details">
+          <div className="jobCard__description jobCard__description--phone">
+            <h3 className="jobCard__header">{company}</h3>
+            <h2 className="jobCard__title">{title}</h2>
+            <p className="jobCard__text">Full TIme</p>
           </div>
-          <div className="card__info card__info--phone">
-            <div className="card__info__wrapper">
-              <span className="material-icons card__icon">public</span>
-              <p className="card__caption">{location}</p>
+          <div className="jobCard__info jobCard__info--phone">
+            <div className="jobCard__info__wrapper">
+              <span className="material-icons jobCard__icon">public</span>
+              <p className="jobCard__caption">{location}</p>
             </div>
-            <div className="card__info__wrapper">
-              <span className="material-icons card__icon">schedule</span>
-              <p className="card__caption">3 days ago</p>
+            <div className="jobCard__info__wrapper">
+              <span className="material-icons jobCard__icon">schedule</span>
+              <p className="jobCard__caption">3 days ago</p>
             </div>
           </div>
         </div>

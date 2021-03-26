@@ -16,7 +16,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(jobsReceived("React", isFullTime, option.city));
+    dispatch(jobsReceived("JavaScript", isFullTime, option.city));
   }, [dispatch, option.city, isFullTime]);
 
   return (
@@ -33,7 +33,7 @@ const Home = () => {
           jobsReceived={jobsReceived}
         />
       </section>
-      <main className="main">
+      <main className="main__section">
         <Aside
           setOption={setOption}
           isFullTime={isFullTime}

@@ -55,8 +55,8 @@
   &__submit {
     background: $color-blue;
     position: absolute;
-    right: 15em;
-    padding: 0.45em 2em;
+    right: 14.9em;
+    padding: 0.35em 2em !important;
     font-size: 1.5rem;
     border: none;
     outline: none;
@@ -65,20 +65,20 @@
     border-radius: 0.2em;
 
     @include breakpoint(sm) {
-      right: 8.35em;
+      right: 8.2em;
     }
 
     @include breakpoint(smx) {
-      right: 5.7em;
+      right: 5.55em;
     }
 
     @include breakpoint(xs) {
-      right: 3em;
+      right: 2.9em;
     }
 
     @include breakpoint(xxs) {
-      padding: 0.45em 1.5em;
-      right: 1.65em;
+      padding: 0.35em 1em !important;
+      right: 1.55em;
     }
 
     &:hover {

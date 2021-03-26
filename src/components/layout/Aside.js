@@ -23,6 +23,7 @@ const Aside = (props) => {
 
   const handleRadioChange = (e) => {
     setOption({ [e.target.name]: e.target.value });
+    setFilterText("");
   };
   return (
     <aside className="form__aside">

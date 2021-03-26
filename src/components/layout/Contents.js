@@ -14,6 +14,8 @@ const Contents = () => {
       {jobs.map((job) => (
         <Card key={job.id} details={job} />
       ))}
+
+      <div>Pagination Here</div>
     </ul>
   );
 };
