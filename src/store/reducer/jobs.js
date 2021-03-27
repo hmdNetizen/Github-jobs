@@ -20,6 +20,12 @@ const jobsReducer = (state = initialState, action) => {
         loading: false,
         jobs: payload,
       };
+    case actions.JOB_DETAILS_RETRIEVED:
+      return {
+        ...state,
+        loading: false,
+        job: payload,
+      };
     default:
       return state;
   }

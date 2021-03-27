@@ -4,6 +4,10 @@
     font-size: 3rem;
     font-weight: 700;
     color: $color-darkBlue;
+
+    &--small {
+      font-size: 1.5rem;
+    }
   }
 
   &__thin {

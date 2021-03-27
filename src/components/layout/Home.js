@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import SearchField from "../formElements/SearchField";
 import { jobsReceived } from "../../store/actions/jobs";
 import Aside from "./Aside";
-import Contents from "./Contents";
+import Contents from "./Jobs";
+import Header from "./Header";
 
 const Home = () => {
   const [isFullTime, setIsFullTime] = useState(false);
@@ -21,11 +22,11 @@ const Home = () => {
 
   return (
     <Fragment>
-      <header className="header">
-        <h1 className="header__title">
-          Github <span className="header__thin">Jobs</span>
-        </h1>
-      </header>
+      <Header
+        header="header"
+        headerTitle="header__title"
+        headerThin="header__thin"
+      />
       <section>
         <SearchField
           searchText={searchText}

@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "../utils/Card";
 import { useSelector } from "react-redux";
-import Spinner from "./../utils/Spinner";
+import Spinner from "../utils/Spinner";
 
-const Contents = () => {
+const Jobs = () => {
   const loading = useSelector((state) => state.entities.loading);
   const jobs = useSelector((state) => state.entities.jobs);
 
@@ -20,4 +20,4 @@ const Contents = () => {
   );
 };
 
-export default Contents;
+export default Jobs;

@@ -1,0 +1,132 @@
+.jobDetails {
+  display: flex;
+  font-family: $font-secondary;
+  @include breakpoint(xs) {
+    flex-direction: column;
+  }
+  &__aside {
+    max-width: 25em;
+    margin-right: 5em;
+
+    &__info {
+      margin-top: 2em;
+
+      & > h4 {
+        font-size: 1.5rem;
+        color: $color-grey;
+      }
+
+      & > p {
+        line-height: 1.7;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__link {
+    color: $color-blue-light;
+    display: flex;
+    align-items: center;
+    height: 2em;
+  }
+
+  &__arrow__icon {
+    transform: rotate(180deg);
+    margin-right: 0.35em;
+    margin-left: -0.2em;
+  }
+
+  &__arrow__text {
+    font-size: 1.2rem;
+    align-self: center;
+  }
+
+  &__overview {
+    & .jobDetails__title__wrapper {
+      display: flex;
+      color: $color-darkBlue;
+
+      @include breakpoint(xs) {
+        flex-direction: column;
+      }
+
+      & .jobDetails__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-right: 1.5em;
+        margin-bottom: 0;
+        @include breakpoint(xs) {
+          max-width: 15em;
+        }
+      }
+
+      & .jobDetails__type {
+        border: 1px solid $color-grey;
+        padding: 0.25em;
+        align-self: flex-end;
+        font-weight: 700;
+        border-radius: 0.75em;
+
+        @include breakpoint(xs) {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+
+  &__time {
+    display: flex;
+    color: $color-grey;
+
+    & > .jobDetails__icon {
+      font-size: 1.5rem;
+      margin-right: 0.5em;
+    }
+
+    & > .jobDetails__text {
+      margin-bottom: 0;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+
+    & > .jobDetails__logo {
+      width: 4em;
+      object-fit: scale-down;
+      margin-right: 1em;
+    }
+
+    & > .jobDetails__company {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    & .jobDetails__company__name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    & .jobDetails__location {
+      display: flex;
+      color: $color-grey;
+
+      & > .jobCard__icon {
+        font-size: 1.5rem;
+        margin-right: 0.5em;
+      }
+
+      & > .jobCard__caption {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 1.5em;
+    &__text {
+      font-size: 1.2rem;
+    }
+  }
+}

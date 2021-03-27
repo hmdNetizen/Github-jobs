@@ -5,10 +5,10 @@ const dummyLogo =
   "https://www.gsr-technology.co.uk/wp-content/uploads/2015/10/partner-logo-placeholder.jpg";
 
 const Card = ({ details }) => {
-  const { company, company_logo, title, location } = details;
+  const { id, company, company_logo, title, location } = details;
   return (
-    <Link to="/">
-      <li className="jobCard">
+    <li className="jobCard">
+      <Link to={`/${id}`} className="jobCard__link">
         <img
           src={company_logo !== null ? company_logo : dummyLogo}
           alt="Company logo"
@@ -47,8 +47,8 @@ const Card = ({ details }) => {
             </div>
           </div>
         </div>
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 };
 

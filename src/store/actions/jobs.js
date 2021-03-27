@@ -1,8 +1,6 @@
 import * as actions from "./types";
 import axios from "axios";
 
-// https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json
-
 const baseURL =
   "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
 
@@ -46,4 +44,21 @@ export const jobsReceived = (description, full_time, location) => async (
   return () => {
     cancelToken.cancel();
   };
+};
+
+export const jobDetailsRetrieved = (id) => async (dispatch) => {
+  jobsRequested();
+
+  try {
+    const response = await axios.get(
+      `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json?markdown=true`
+    );
+
+    dispatch({
+      type: actions.JOB_DETAILS_RETRIEVED,
+      payload: response.data,
+    });
+  } catch (error) {
+    dispatch(jobRequestedFailed(error.message));
+  }
 };
