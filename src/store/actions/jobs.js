@@ -1,8 +1,7 @@
 import * as actions from "./types";
 import axios from "axios";
 
-const baseURL =
-  "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
+const baseURL = "/positions.json";
 
 export const jobsRequested = () => (dispatch) => {
   dispatch({
@@ -50,9 +49,7 @@ export const jobDetailsRetrieved = (id) => async (dispatch) => {
   jobsRequested();
 
   try {
-    const response = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json?markdown=true`
-    );
+    const response = await axios.get(`/positions/${id}.json?markdown=true`);
 
     dispatch({
       type: actions.JOB_DETAILS_RETRIEVED,
