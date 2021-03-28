@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { jobDetailsRetrieved } from "../../store/actions/jobs";
 import Header from "./Header";
 import ReactMarkdown from "react-markdown";
+import getDays from "./../utils/getDays";
 
 const JobDetails = () => {
   const dispatch = useDispatch();
@@ -43,7 +44,9 @@ const JobDetails = () => {
             </div>
             <div className="jobDetails__time">
               <span className="material-icons jobDetails__icon">schedule</span>
-              <p className="jobsDetail__time__text">3 days ago</p>
+              <p className="jobDetails__time__text">
+                {`${getDays(job.created_at)} days ago`}
+              </p>
             </div>
             <div className="jobDetails__brand">
               <img

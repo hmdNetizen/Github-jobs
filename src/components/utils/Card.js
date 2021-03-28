@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import getDays from "./getDays";
 
 const dummyLogo =
   "https://www.gsr-technology.co.uk/wp-content/uploads/2015/10/partner-logo-placeholder.jpg";
 
 const Card = ({ details }) => {
-  const { id, company, company_logo, title, location } = details;
+  const { id, company, company_logo, title, location, created_at } = details;
   return (
     <li className="jobCard">
       <Link to={`/${id}`} className="jobCard__link">
@@ -26,7 +27,11 @@ const Card = ({ details }) => {
           </div>
           <div className="jobCard__info__wrapper">
             <span className="material-icons jobCard__icon">schedule</span>
-            <p className="jobCard__caption">3 days ago</p>
+            <p className="jobCard__caption">{`${
+              getDays(created_at) > 1
+                ? `${getDays(created_at)} days ago`
+                : `${getDays(created_at)} day ago`
+            } `}</p>
           </div>
         </div>
         {/* Only displays on breakpoints that is less than 600px */}
@@ -43,7 +48,11 @@ const Card = ({ details }) => {
             </div>
             <div className="jobCard__info__wrapper">
               <span className="material-icons jobCard__icon">schedule</span>
-              <p className="jobCard__caption">3 days ago</p>
+              <p className="jobCard__caption">{`${
+                getDays(created_at) > 1
+                  ? `${getDays(created_at)} days ago`
+                  : `${getDays(created_at)} day ago`
+              } `}</p>
             </div>
           </div>
         </div>
