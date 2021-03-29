@@ -7,6 +7,7 @@ import { jobsReceived } from "../../store/actions/jobs";
 const Aside = (props) => {
   const dispatch = useDispatch();
   const {
+    option,
     setOption,
     isFullTime,
     setIsFullTime,
@@ -18,7 +19,11 @@ const Aside = (props) => {
   const handleJobsFilter = (e) => {
     setFilterText(e.target.value);
 
-    dispatch(jobsReceived(filterText));
+    if (filterText !== "") {
+      dispatch(jobsReceived(filterText));
+    } else {
+      dispatch(jobsReceived("JavaScript", isFullTime, option.city));
+    }
   };
 
   const handleRadioChange = (e) => {

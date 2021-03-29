@@ -6,7 +6,15 @@ const dummyLogo =
   "https://www.gsr-technology.co.uk/wp-content/uploads/2015/10/partner-logo-placeholder.jpg";
 
 const Card = ({ details }) => {
-  const { id, company, company_logo, title, location, created_at } = details;
+  const {
+    id,
+    type,
+    company,
+    company_logo,
+    title,
+    location,
+    created_at,
+  } = details;
   return (
     <li className="jobCard">
       <Link to={`/${id}`} className="jobCard__link">
@@ -18,7 +26,7 @@ const Card = ({ details }) => {
         <div className="jobCard__description">
           <h3 className="jobCard__header">{company}</h3>
           <h2 className="jobCard__title">{title}</h2>
-          <p className="jobCard__text">Full TIme</p>
+          <p className="jobCard__text">{type}</p>
         </div>
         <div className="jobCard__info">
           <div className="jobCard__info__wrapper">

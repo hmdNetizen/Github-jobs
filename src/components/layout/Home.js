@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import SearchField from "../formElements/SearchField";
 import { jobsReceived } from "../../store/actions/jobs";
 import Aside from "./Aside";
-import Contents from "./Jobs";
+import Jobs from "./Jobs";
 import Header from "./Header";
 
 const Home = () => {
@@ -36,13 +36,14 @@ const Home = () => {
       </section>
       <main className="main__section">
         <Aside
+          option={option}
           setOption={setOption}
           isFullTime={isFullTime}
           setIsFullTime={setIsFullTime}
           filterText={filterText}
           setFilterText={setFilterText}
         />
-        <Contents />
+        <Jobs />
       </main>
     </Fragment>
   );
