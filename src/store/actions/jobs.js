@@ -18,6 +18,12 @@ const jobRequestedFailed = (error) => (dispatch) => {
   });
 };
 
+export const jobsRequestedEmpty = () => (dispatch) => {
+  dispatch({
+    type: actions.JOBS_REQUESTED_EMPTY,
+  });
+};
+
 export const jobsReceived = (description, full_time, location) => async (
   dispatch
 ) => {
@@ -33,10 +39,14 @@ export const jobsReceived = (description, full_time, location) => async (
         location,
       },
     });
-    dispatch({
-      type: actions.JOBS_RECEIVED,
-      payload: response.data,
-    });
+    if (response.data.length > 0) {
+      dispatch({
+        type: actions.JOBS_RECEIVED,
+        payload: response.data,
+      });
+    } else {
+      dispatch(jobsRequestedEmpty());
+    }
   } catch (error) {
     if (axios.isCancel(error)) return;
     dispatch(jobRequestedFailed(error.message));
@@ -48,7 +58,7 @@ export const jobsReceived = (description, full_time, location) => async (
 };
 
 export const jobDetailsRetrieved = (id) => async (dispatch) => {
-  jobsRequested();
+  dispatch(jobsRequested());
 
   try {
     const response = await axios.get(`/positions/${id}.json?markdown=true`);

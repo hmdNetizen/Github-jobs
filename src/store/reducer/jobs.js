@@ -5,6 +5,7 @@ const initialState = {
   loading: true,
   job: null,
   errors: null,
+  isEmptyJobs: false,
 };
 const jobsReducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -19,12 +20,28 @@ const jobsReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         jobs: payload,
+        errors: null,
+        isEmptyJobs: false,
       };
     case actions.JOB_DETAILS_RETRIEVED:
       return {
         ...state,
         loading: false,
         job: payload,
+        errors: null,
+      };
+    case actions.JOBS_REQUESTED_EMPTY:
+      return {
+        ...state,
+        isEmptyJobs: true,
+        loading: false,
+        errors: null,
+      };
+    case actions.JOBS_REQUESTED_FAILED:
+      return {
+        ...state,
+        errors: action.payload,
+        loading: false,
       };
     default:
       return state;

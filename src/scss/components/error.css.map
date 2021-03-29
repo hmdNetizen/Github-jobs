@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACG,AAAD,eAAU,CAAC;EACT,KAAK,EAAE,GAAG;CACX",
+    "sources": [
+        "error.scss"
+    ],
+    "names": [],
+    "file": "error.css"
+}
