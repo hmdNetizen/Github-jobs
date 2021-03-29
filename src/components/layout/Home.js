@@ -10,6 +10,7 @@ const Home = () => {
   const [isFullTime, setIsFullTime] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [filterText, setFilterText] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const [option, setOption] = useState({
     city: "New York",
@@ -37,13 +38,14 @@ const Home = () => {
       <main className="main__section">
         <Aside
           option={option}
+          setCurrentPage={setCurrentPage}
           setOption={setOption}
           isFullTime={isFullTime}
           setIsFullTime={setIsFullTime}
           filterText={filterText}
           setFilterText={setFilterText}
         />
-        <Jobs />
+        <Jobs currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </main>
     </Fragment>
   );

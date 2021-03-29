@@ -5,10 +5,9 @@ import Spinner from "../utils/Spinner";
 import { paginate } from "../utils/paginate";
 import Pagination from "./Pagination";
 
-const Jobs = () => {
+const Jobs = ({ currentPage, setCurrentPage }) => {
   const loading = useSelector((state) => state.entities.loading);
   const jobs = useSelector((state) => state.entities.jobs);
-  const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(5);
 
   const handlePageChange = (page) => {

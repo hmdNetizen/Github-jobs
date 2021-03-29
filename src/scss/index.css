@@ -227,6 +227,17 @@ input {
   }
 }
 
+.pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination .page-item {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
 @media (max-width: 960px) {
   .form {
     padding-left: 5em;

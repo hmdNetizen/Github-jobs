@@ -13,7 +13,9 @@ const Aside = (props) => {
     setIsFullTime,
     filterText,
     setFilterText,
+    setCurrentPage,
   } = props;
+
   const handleFullTimeCheck = (e) => setIsFullTime((prev) => !prev);
 
   const handleJobsFilter = (e) => {
@@ -24,6 +26,7 @@ const Aside = (props) => {
     } else {
       dispatch(jobsReceived("JavaScript", isFullTime, option.city));
     }
+    setCurrentPage(1);
   };
 
   const handleRadioChange = (e) => {
