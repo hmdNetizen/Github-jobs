@@ -12,14 +12,12 @@ const Home = () => {
   const [filterText, setFilterText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [option, setOption] = useState({
-    city: "New York",
-  });
+  const [option, setOption] = useState("");
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(jobsReceived("JavaScript", isFullTime, option.city));
-  }, [dispatch, option.city, isFullTime]);
+    dispatch(jobsReceived("JavaScript", isFullTime, option));
+  }, [dispatch, option, isFullTime]);
 
   return (
     <Fragment>
