@@ -606,9 +606,16 @@ input {
   color: #aeafb6;
 }
 
-.jobDetails__aside__info > p {
-  line-height: 1.7;
+.jobDetails__aside__info > span {
   font-size: 1.2rem;
+}
+
+.jobDetails__aside__info > span > a {
+  white-space: wrap;
+  text-overflow: ellipsis;
+  max-width: 40ch;
+  overflow: hidden;
+  display: inline-block;
 }
 
 .jobDetails__link {

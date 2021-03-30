@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { jobDetailsRetrieved } from "../../store/actions/jobs";
 import Header from "./Header";
-import ReactMarkdown from "react-markdown";
+import Markdown from "markdown-to-jsx";
 import getDays from "./../utils/getDays";
 import Spinner from "../utils/Spinner";
 
@@ -39,7 +39,7 @@ const JobDetails = () => {
               </Link>
               <div className="jobDetails__aside__info">
                 <h4>How to apply</h4>
-                <ReactMarkdown>{job.how_to_apply}</ReactMarkdown>
+                <Markdown>{job.how_to_apply}</Markdown>
               </div>
             </aside>
             <main className="jobDetails__overview">
@@ -70,9 +70,9 @@ const JobDetails = () => {
                 </div>
               </div>
               <div className="jobDetails__description">
-                <ReactMarkdown className="jobDetails__description__text">
+                <Markdown className="jobDetails__description__text">
                   {job.description}
-                </ReactMarkdown>
+                </Markdown>
               </div>
             </main>
           </div>

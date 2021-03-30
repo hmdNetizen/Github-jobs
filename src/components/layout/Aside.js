@@ -97,7 +97,6 @@ const Aside = (props) => {
               name="city"
               className="form__radio__btn"
               value="New York"
-              defaultChecked
               onChange={handleRadioChange}
             />
             <label

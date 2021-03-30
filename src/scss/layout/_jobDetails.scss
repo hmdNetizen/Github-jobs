@@ -16,9 +16,16 @@
         color: $color-grey;
       }
 
-      & > p {
-        line-height: 1.7;
+      // This is applied to the markdown
+      & > span {
         font-size: 1.2rem;
+        & > a {
+          white-space: wrap;
+          text-overflow: ellipsis;
+          max-width: 40ch;
+          overflow: hidden;
+          display: inline-block;
+        }
       }
     }
   }
