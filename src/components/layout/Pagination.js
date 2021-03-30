@@ -17,7 +17,7 @@ const Pagination = (props) => {
           >
             <a
               className="page-link"
-              href="!#"
+              href="#!"
               onClick={() => onPageChange(page)}
             >
               {page}
