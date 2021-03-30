@@ -4,6 +4,7 @@ const initialState = {
   jobs: [],
   loading: true,
   job: null,
+  filtered: [],
   errors: null,
   isEmptyJobs: false,
 };

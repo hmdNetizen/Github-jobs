@@ -6,6 +6,7 @@ import Header from "./Header";
 import Markdown from "markdown-to-jsx";
 import getDays from "./../utils/getDays";
 import Spinner from "../utils/Spinner";
+import Footer from "./Footer";
 
 const JobDetails = () => {
   const dispatch = useDispatch();
@@ -78,6 +79,7 @@ const JobDetails = () => {
           </div>
         )
       )}
+      {!loading && <Footer />}
     </Fragment>
   );
 };

@@ -1,10 +1,11 @@
 import { Fragment, useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SearchField from "../formElements/SearchField";
 import { jobsReceived } from "../../store/actions/jobs";
 import Aside from "./Aside";
 import Jobs from "./Jobs";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Home = () => {
   const [isFullTime, setIsFullTime] = useState(false);
@@ -13,6 +14,8 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const [option, setOption] = useState("");
+
+  const loading = useSelector((state) => state.entities.loading);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -31,6 +34,7 @@ const Home = () => {
           searchText={searchText}
           setSearchText={setSearchText}
           jobsReceived={jobsReceived}
+          setCurrentPage={setCurrentPage}
         />
       </section>
       <main className="main__section">
@@ -45,6 +49,7 @@ const Home = () => {
         />
         <Jobs currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </main>
+      {!loading && <Footer />}
     </Fragment>
   );
 };

@@ -1,5 +1,6 @@
 .main__section {
   display: flex;
+  justify-content: space-between;
 
   @include breakpoint(sm) {
     flex-direction: column;

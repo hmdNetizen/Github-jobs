@@ -246,6 +246,16 @@ input {
   font-size: 1.5rem;
 }
 
+.pagination .page-item > .page-link {
+  color: #423f50;
+}
+
+.pagination .page-item.active > .page-link {
+  background: #423f50;
+  border-color: #423f50;
+  color: #fff;
+}
+
 @media (max-width: 960px) {
   .form {
     padding-left: 5em;
@@ -558,6 +568,14 @@ input {
   margin-right: 1em;
 }
 
+.footer {
+  margin-top: 4em;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #717275;
+}
+
 .header {
   margin-bottom: 3em;
 }
@@ -595,6 +613,18 @@ input {
 .jobDetails__aside {
   max-width: 25em;
   margin-right: 5em;
+}
+
+@media (max-width: 1279px) {
+  .jobDetails__aside {
+    min-width: 25em;
+  }
+}
+
+@media (max-width: 960px) {
+  .jobDetails__aside {
+    min-width: 15em;
+  }
 }
 
 .jobDetails__aside__info {
@@ -758,6 +788,7 @@ input {
 
 .jobDetails__description {
   margin-top: 1.5em;
+  text-align: justify;
 }
 
 .jobDetails__description__text {
@@ -768,6 +799,9 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media (max-width: 960px) {

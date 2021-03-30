@@ -6,6 +6,7 @@ import { jobsReceived } from "../../store/actions/jobs";
 // All styles for this component can be found in <_form.scss>
 const Aside = (props) => {
   const dispatch = useDispatch();
+
   const {
     option,
     setOption,
@@ -22,7 +23,7 @@ const Aside = (props) => {
     setFilterText(e.target.value);
 
     if (filterText !== "") {
-      dispatch(jobsReceived(filterText));
+      dispatch(jobsReceived("JavaScript", null, filterText));
     } else {
       dispatch(jobsReceived("JavaScript", isFullTime, option.city));
     }

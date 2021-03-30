@@ -1,7 +1,13 @@
 import Input from "./Input";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 
-const SearchField = ({ searchText, setSearchText, jobsReceived }) => {
+const SearchField = ({
+  searchText,
+  setSearchText,
+  jobsReceived,
+  setCurrentPage,
+}) => {
   const dispatch = useDispatch();
 
   const handleSearchedText = (e) => setSearchText(e.target.value);
@@ -16,6 +22,7 @@ const SearchField = ({ searchText, setSearchText, jobsReceived }) => {
     }
 
     setSearchText("");
+    setCurrentPage(1);
   };
 
   return (
@@ -32,6 +39,13 @@ const SearchField = ({ searchText, setSearchText, jobsReceived }) => {
       <span className="material-icons form__inputIcon">work_outline</span>
     </form>
   );
+};
+
+SearchField.propTypes = {
+  searchText: PropTypes.string.isRequired,
+  setSearchText: PropTypes.func.isRequired,
+  jobReceived: PropTypes.func,
+  setCurrentPage: PropTypes.func.isRequired,
 };
 
 export default SearchField;

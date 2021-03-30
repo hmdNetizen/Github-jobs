@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Card from "../utils/Card";
 import { useSelector } from "react-redux";
 import Spinner from "../utils/Spinner";
@@ -39,6 +40,11 @@ const Jobs = ({ currentPage, setCurrentPage }) => {
       />
     </ul>
   );
+};
+
+Jobs.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
 };
 
 export default Jobs;
