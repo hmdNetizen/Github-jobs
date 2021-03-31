@@ -5,7 +5,7 @@
     flex-direction: column;
   }
   &__aside {
-    max-width: 25em;
+    min-width: 15em;
     margin-right: 5em;
 
     @include breakpoint(md) {
@@ -25,14 +25,15 @@
       }
 
       // This is applied to the markdown
-      & > span {
-        font-size: 1.2rem;
+      & > p {
+        font-size: 1.5rem;
         & > a {
           white-space: wrap;
           text-overflow: ellipsis;
           max-width: 40ch;
           overflow: hidden;
           display: inline-block;
+          font-size: 1.5rem;
         }
       }
     }
@@ -98,6 +99,7 @@
     display: flex;
     color: $color-grey;
     margin-bottom: 1em;
+    align-items: center;
 
     & > .jobDetails__icon {
       font-size: 1.5rem;

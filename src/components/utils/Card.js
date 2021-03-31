@@ -36,10 +36,12 @@ const Card = ({ details }) => {
           <div className="jobCard__info__wrapper">
             <span className="material-icons jobCard__icon">schedule</span>
             <p className="jobCard__caption">{`${
-              getDays(created_at) > 1
-                ? `${getDays(created_at)} days ago`
-                : `${getDays(created_at)} day ago`
-            } `}</p>
+              getDays(created_at) < 1
+                ? "Today"
+                : getDays(created_at) === 1
+                ? getDays(created_at) + " day ago"
+                : getDays(created_at) + " days ago"
+            }`}</p>
           </div>
         </div>
         {/* Only displays on breakpoints that is less than 600px */}

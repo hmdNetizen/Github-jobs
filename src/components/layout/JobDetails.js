@@ -53,7 +53,13 @@ const JobDetails = () => {
                   schedule
                 </span>
                 <p className="jobDetails__time__text">
-                  {`${getDays(job.created_at)} days ago`}
+                  {`${
+                    getDays(job.created_at) < 1
+                      ? "Today"
+                      : getDays(job.created_at) === 1
+                      ? getDays(job.created_at) + " day ago"
+                      : getDays(job.created_at) + " days ago"
+                  }`}
                 </p>
               </div>
               <div className="jobDetails__brand">
