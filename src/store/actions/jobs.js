@@ -3,8 +3,7 @@ import axios from "axios";
 
 // https://cors-anywhere.herokuapp.com/https://jobs.github.com
 
-const baseURL =
-  "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
+const baseURL = "https://jobs.github.com/positions.json";
 
 export const jobsRequested = () => (dispatch) => {
   dispatch({
@@ -33,6 +32,9 @@ export const jobsReceived = (description, full_time, location) => async (
   const cancelToken = axios.CancelToken.source();
   try {
     const response = await axios.get(baseURL, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
       cancelToken: cancelToken.token,
       params: {
         description,
@@ -63,7 +65,12 @@ export const jobDetailsRetrieved = (id) => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json?markdown=true`
+      `https://jobs.github.com/positions/${id}.json?markdown=true`,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
 
     dispatch({
