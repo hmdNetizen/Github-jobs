@@ -3,7 +3,8 @@ import axios from "axios";
 
 // https://cors-anywhere.herokuapp.com/https://jobs.github.com
 
-const baseURL = "https://jobs.github.com/positions.json";
+const baseURL =
+  "https://rhubarb-crumble-16507.herokuapp.com/https://jobs.github.com/positions.json";
 
 export const jobsRequested = () => (dispatch) => {
   dispatch({
@@ -62,7 +63,7 @@ export const jobDetailsRetrieved = (id) => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      `https://jobs.github.com/positions/${id}.json?markdown=true`
+      `https://rhubarb-crumble-16507.herokuapp.com/https://jobs.github.com/positions/${id}.json?markdown=true`
     );
 
     dispatch({
