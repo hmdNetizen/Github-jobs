@@ -32,9 +32,6 @@ export const jobsReceived = (description, full_time, location) => async (
   const cancelToken = axios.CancelToken.source();
   try {
     const response = await axios.get(baseURL, {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
       cancelToken: cancelToken.token,
       params: {
         description,
@@ -65,12 +62,7 @@ export const jobDetailsRetrieved = (id) => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      `https://jobs.github.com/positions/${id}.json?markdown=true`,
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
+      `https://jobs.github.com/positions/${id}.json?markdown=true`
     );
 
     dispatch({
