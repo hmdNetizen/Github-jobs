@@ -27,13 +27,30 @@
       // This is applied to the markdown
       & > p {
         font-size: 1.5rem;
-        & > a {
-          white-space: wrap;
-          text-overflow: ellipsis;
-          max-width: 40ch;
-          overflow: hidden;
-          display: inline-block;
-          font-size: 1.5rem;
+      }
+      & > a {
+        white-space: wrap;
+        text-overflow: ellipsis;
+        max-width: 10em;
+        overflow: hidden;
+        display: inline-block;
+        font-size: 1.5rem;
+
+        @include breakpoint(md) {
+          max-width: 15em;
+        }
+        @include breakpoint(sm) {
+          max-width: 10em;
+        }
+        @include breakpoint(xs) {
+          max-width: 22em;
+          margin-bottom: 0.75em;
+        }
+        @include breakpoint(xxs) {
+          max-width: 20em;
+        }
+        @include breakpoint(xxxs) {
+          max-width: 15em;
         }
       }
     }
