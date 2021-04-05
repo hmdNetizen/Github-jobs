@@ -28,6 +28,12 @@
       & > p {
         font-size: 1.5rem;
       }
+
+      & > span {
+        @include breakpoint(xs) {
+          margin-bottom: 1em;
+        }
+      }
       & > a {
         white-space: wrap;
         text-overflow: ellipsis;

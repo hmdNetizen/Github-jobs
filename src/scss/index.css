@@ -640,6 +640,12 @@ input {
   font-size: 1.5rem;
 }
 
+@media (max-width: 599px) {
+  .jobDetails__aside__info > span {
+    margin-bottom: 1em;
+  }
+}
+
 .jobDetails__aside__info > a {
   white-space: wrap;
   text-overflow: ellipsis;
